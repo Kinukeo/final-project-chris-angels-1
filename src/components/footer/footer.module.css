@@ -5,6 +5,8 @@
   margin-top: auto;
   width: 100%;
   text-align: center;
+  position: fixed;
+  bottom: 0;
 }
 
 .content {
@@ -17,3 +19,4 @@
   font-size: 1rem;
   font-weight: 500; /* Medium font weight */
 }
+
