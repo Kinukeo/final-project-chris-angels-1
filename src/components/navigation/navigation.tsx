@@ -57,7 +57,7 @@ export default function Navigation() {
               Family Tree
             </Link>
           </li> */}
-          
+
           <li className={styles.navItem}>
             <Link href="/calendar" className={styles.navLink}>
               Calendar
