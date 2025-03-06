@@ -3,6 +3,7 @@
   flex-direction: column;
   min-height: 100vh;
   background-color: #ffffff;
+  padding-bottom: 5rem;
 }
 
 .main {

@@ -52,11 +52,11 @@ export default function Navigation() {
               Timeline
             </Link>
           </li>
-          <li className={styles.navItem}>
+          {/* <li className={styles.navItem}>
             <Link href="/tree" className={styles.navLink}>
               Family Tree
             </Link>
-          </li>
+          </li> */}
           <li className={styles.navItem}>
             <Link href="/calendar" className={styles.navLink}>
               Calendar
