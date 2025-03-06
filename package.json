@@ -41,6 +41,6 @@
     "eslint-config-next": "15.2.1",
     "husky": "^9.1.7",
     "typescript": "^5",
-    "vitest": "^3.0.7"
+    "vitest": "^3.0.8"
   }
 }
