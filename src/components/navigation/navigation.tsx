@@ -30,7 +30,7 @@
 
 import Link from "next/link";
 import styles from "./navigation.module.css";
-import LogoutButton from "../auth/LogOutButton";
+import LogoutButton from "../auth/LogoutButton";
 
 export default function Navigation() {
   return (
