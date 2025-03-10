@@ -59,6 +59,21 @@ export async function populateMarthaData() {
   try {
     console.log("Starting to populate Martha's data...");
 
+    // Check environment variables
+    if (!process.env.PINECONE_API_KEY) {
+      throw new Error(
+        "PINECONE_API_KEY is not defined in environment variables",
+      );
+    }
+    if (!process.env.PINECONE_INDEX_NAME) {
+      throw new Error(
+        "PINECONE_INDEX_NAME is not defined in environment variables",
+      );
+    }
+    if (!process.env.OPENAI_API_KEY) {
+      throw new Error("OPENAI_API_KEY is not defined in environment variables");
+    }
+
     // For each content item, create an embedding and store it
     for (const item of mixedContentItems) {
       // Create a comprehensive text representation of this item
