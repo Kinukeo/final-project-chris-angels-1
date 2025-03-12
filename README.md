@@ -4,6 +4,8 @@ A memory aid app that helps individuals with cognitive impairments store and rev
 
 **Live Demo:** https://my-memories-omega.vercel.app/
 
+**Presentation Slides:** https://www.canva.com/design/DAGhCqvlXP8/eeeDbJIzY8AjJXQvMFUgaQ/view?utm_content=DAGhCqvlXP8&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h81375ea3de
+
 ---
 
 ## Table of Contents
