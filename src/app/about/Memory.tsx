@@ -25,7 +25,7 @@ export const mixedContentItems: ContentItem[] = [
   {
     type: "image",
     title: "Family Reunion",
-    content: "/api/placeholder/800/600",
+    content: "/assets/jack-sam-teddy-2017.jpg",
     description:
       "Our annual family gathering at Lake Michigan last summer - all 23 of us!",
   },
@@ -65,7 +65,7 @@ export const mixedContentItems: ContentItem[] = [
   {
     type: "audio",
     title: "Our Wedding Song",
-    content: "https://example.com/music.mp3",
+    content: "/assets/the-final-waltz-8066.mp3",
     description:
       '"Can\'t Help Falling in Love" - Robert and I danced to this at our wedding in 1979',
   },
