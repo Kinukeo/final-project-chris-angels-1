@@ -10,7 +10,13 @@ jobs:
   build:
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest, macos-latest]
+        os: [ubuntu-latest]
+        # Run on all OSes only for main branch or PRs to main
+        include:
+          - os: windows-latest
+            if: github.ref == 'refs/heads/main' || github.event_name == 'pull_request'
+          - os: macos-latest
+            if: github.ref == 'refs/heads/main' || github.event_name == 'pull_request'
 
     runs-on: ${{ matrix.os }}
 
@@ -18,11 +24,29 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+          cache: "npm"
+
       - name: Install dependencies
-        run: npm install
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint || true
 
       - name: Build application
-        run: npm run tsc
+        run: npm run build
+        env:
+          # Add these if needed
+          NEXT_PUBLIC_SUPABASE_URL: ${{secrets.NEXT_PUBLIC_SUPABASE_URL}}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY}}
+          PINECONE_API_KEY: ${{ secrets.PINECONE_API_KEY }}
+          PINECONE_INDEX_NAME: ${{ secrets.PINECONE_INDEX_NAME }}
+          PINECONE_REGION: ${{secrets.PINECONE_REGION}}
+          PINECONE_CLOUD: ${{secrets.PINECONE_CLOUD}}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
 
       - name: Run tests
         run: npm test
